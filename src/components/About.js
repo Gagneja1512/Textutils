@@ -3,8 +3,8 @@ import React , {useState} from "react";
 
 export default function () {
     const [myStyle , setMyStyle] = useState({
-        color : 'black' ,
-        backgroundColor : 'white' ,
+        color : 'white' ,
+        backgroundColor : 'black' ,
     })
 
     const [btnText, setbtnText] = useState("Enable Dark mode")
