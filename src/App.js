@@ -5,6 +5,12 @@ import Textform from './components/Textform';
 import About from './components/About';
 import React , {useState} from 'react';
 import Alert from './components/Alert';
+import {
+  BrowserRouter as Router ,
+  Routes ,
+  Route , 
+  Link 
+  } from "react-router-dom" 
 
 function App() {
   const [mode, setmode] = useState('light')
@@ -31,19 +37,22 @@ function App() {
       setmode('light') ;
       document.body.style.backgroundColor = 'white' ;
       showAlert("Light mode has been enabled ") ;
-      document.title = 'TextUtils - Dark Mode' ;
+      document.title = 'TextUtils - Light Mode' ;
     }
   }
   return (
     <>
+      <Router>
       <Navbar title="Textutils" about="About Us" mode = {mode} toggleMode = {toggleMode}></Navbar>
       <Alert alert = {alert} />
       <div className="container my-3">
-        <Textform heading="Enter the text here" mode = {mode}></Textform>
+        <Routes>
+          <Route exact path = '/about' element = {<About mode= {mode}/>}/>
+          <Route exact path = '/' element = {<Textform heading="Enter the text here" mode = {mode}></Textform>} />
+        </Routes>
+        
       </div>
-
-      {/*<About mode= {mode}/>*/}
-      
+      </Router>
     </>
   );
 }
