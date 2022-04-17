@@ -24,12 +24,14 @@ function App() {
       setmode('dark') ;
       document.body.style.backgroundColor = 'grey' ;
       showAlert("Dark mode has been enabled ") ;
+      document.title = 'TextUtils - Dark Mode' ;
     }
     else
     {
       setmode('light') ;
       document.body.style.backgroundColor = 'white' ;
       showAlert("Light mode has been enabled ") ;
+      document.title = 'TextUtils - Dark Mode' ;
     }
   }
   return (
