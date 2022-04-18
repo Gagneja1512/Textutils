@@ -37,7 +37,7 @@ function App() {
       setmode('light') ;
       document.body.style.backgroundColor = 'white' ;
       showAlert("Light mode has been enabled ") ;
-      document.title = 'TextUtils - Light Mode' ;
+      document.title = 'TextUtils' ;
     }
   }
   return (
